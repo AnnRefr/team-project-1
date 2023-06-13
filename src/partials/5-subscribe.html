@@ -1,0 +1,28 @@
+<section class="subscribe">
+  <div class="subscribe__container">
+    <div class="subscribe__case">
+      <h2 class="subscribe__title">Subscribe To Get Special Offers</h2>
+      <p class="subscribe__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <div class="subscribe__box">
+        <form class="subscribe__form" name="subscribe__name" autocomplete="on">
+          <input
+            class="subscribe__input"
+            type="email"
+            name="subscribe__email" required pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+            placeholder="Enter your email"
+          />
+          <div class="subscribe__box__frame">
+          <svg class="subscribe__frame__icon" width="12" height="12">
+            <use href="./images/icons.svg#frame-icon"></use>
+          </svg>
+          <span class="subscribe__form__span">Not a valid email address (example@email.com)</span>
+          </div>
+          <button class="subscribe__btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

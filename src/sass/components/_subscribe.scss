@@ -1,0 +1,152 @@
+.subscribe {
+  @extend .section;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 52px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-top: 82px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 0;
+  }
+}
+
+.subscribe__container {
+  @extend .container;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.subscribe__photo {
+  //   display: inline-block;
+  height: auto;
+  @media screen and (max-width: 767px) {
+    max-width: 161px;
+    // margin-bottom: 17px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 281px;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 608px;
+  }
+}
+
+.subscribe__title {
+  @extend .section__title;
+  margin-bottom: 20px;
+  // text-align: start;
+  @media screen and (min-width: 1200px) {
+    font-size: 42px;
+    line-height: calc(50 / 42);
+  }
+}
+.subscribe__text {
+  line-height: calc(16 / 14);
+  // font-size: 14px;
+  // color: $color-text;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    margin-bottom: 24px;
+  }
+}
+
+.subscribe__form {
+  position: relative;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 22px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.subscribe__input {
+  width: 100%;
+  border: 0.854167px solid $color-bcg-sec;
+  border-radius: 30px;
+  height: 42px;
+  outline: transparent;
+  padding-left: 11px;
+  font-size: 12px;
+  transition: border $duration $timing-function;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+  &:hover,
+  &:focus {
+    border: 0.854167px solid $color-accent-sec;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 394px;
+  }
+}
+
+input::placeholder {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: $color-text-placeholder;
+}
+
+.subscribe__btn {
+  @extend %button;
+  width: 103px;
+  height: 42px;
+  background-color: $color-accent;
+  display: block;
+  font-weight: 500;
+  line-height: calc(20 / 13);
+  
+
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    cursor: pointer;
+    transition: background-color $duration $timing-function;
+  }
+  &:hover,
+  &:focus {
+    background-color: $color-btn-hover;
+  }
+}
+
+.subscribe__case {
+  @media screen and (min-width: 1280px) {
+    width: 656px;
+  }
+}
+
+.subscribe__form__span {
+  color: $color-text-invalid;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: calc(15 / 10);
+}
+
+.subscribe__box__frame {
+  position: absolute;
+  top: 46px;
+  opacity: 0;
+}
+
+.subscribe__input:invalid:required:not(:placeholder-shown)
+  ~ .subscribe__box__frame {
+  opacity: 1;
+}
+.subscribe__input:required:valid:not(:placeholder-shown) {
+  border-color: $color-btn-hover;
+}
+.subscribe__input:required:invalid:not(:placeholder-shown) {
+  border-color: $color-text-invalid;
+}

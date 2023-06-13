@@ -1,0 +1,216 @@
+.offerings {
+  @extend .section;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 41px;
+
+    background-image: url(../images/bcg-mob-1.svg);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 150px;
+
+    background-image: url(../images/bcg-tab-1.svg);
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 177px;
+    padding-bottom: 42px;
+    background-image: url(../images/bcg-desk-1.svg);
+  }
+
+  &__picture--mobile {
+    // margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 768px) {
+      min-width: 357px;
+    }
+    @media screen and (min-width: 1200px) {
+      min-width: 550px;
+    }
+  }
+
+  &__title {
+    @extend .section__title;
+    margin-bottom: 28px;
+    text-align: start;
+
+    @media screen and (min-width: 768px) {
+      max-width: 526px;
+      font-size: 42px;
+      line-height: calc(49 / 42);
+    }
+  }
+
+  &__text {
+    // color: $color-text;
+    // font-size: 14px;
+    line-height: calc(16 / 14);
+
+    margin-bottom: 28px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 40px;
+      max-width: 500px;
+      font-size: 16px;
+      line-height: calc(19 / 16);
+    }
+  }
+
+  &__box--about {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: flex-start;
+      gap: 116px;
+    }
+    @media screen and (min-width: 1200px) {
+      gap: 67px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-text;
+    text-align: start;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: calc(21 / 18);
+    margin-bottom: 16px;
+  }
+
+  &__subtext {
+    color: $color-text;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+
+    @media screen and (min-width: 768px) {
+      max-width: 252px;
+    }
+    @media screen and (min-width: 1200px) {
+      max-width: 253px;
+    }
+  }
+
+  &__list {
+    @extend .list;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      gap: 116px;
+    }
+    @media screen and (min-width: 1280px) {
+      display: flex;
+      gap: 67px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 28px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 336px;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: 1280px) {
+      max-width: 501px;
+    }
+  }
+
+  &__btn-order {
+    @extend %button;
+    width: 106px;
+    height: 40px;
+    padding: 6px 18px;
+    font-weight: 500;
+    background: $color-bcg;
+    border: 2px solid $color-accent-sec;
+    margin-right: 24px;
+
+    transition: border-color $duration $timing-function;
+    &:hover,
+    &:focus {
+      border: 2px solid $color-btn-border-hover;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.5;
+    color: $color-text;
+    transition: $duration $timing-function;
+    &:hover,
+    &:focus {
+      color: #597d00;
+      fill: #597d00;
+    }
+    @media screen and (min-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    margin-left: 8px;
+
+    &:hover,
+    &:focus {
+      fill: currentColor;
+    }
+  }
+}
+
+.deliv::before {
+  content: '';
+  display: block;
+  margin-bottom: 8px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  background: url(../images/offerings/deliv.svg) no-repeat;
+  background-position: center;
+  background-color: $color-bcg;
+  border-radius: 50%;
+}
+
+.order::before {
+  content: '';
+  display: block;
+  margin-bottom: 8px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  background: url(../images/offerings/order.svg) no-repeat;
+  background-position: center;
+  background-color: $color-bcg;
+  border-radius: 50%;
+}
+
+.offerings__container {
+  @extend .container;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+}
+
+.offerings__box--title {
+  @media screen and (max-width: 1279px) {
+    margin-top: 60px;
+  }
+}

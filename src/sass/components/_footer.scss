@@ -1,0 +1,315 @@
+.footer {
+  @extend .section;
+  background-repeat: no-repeat;
+  box-shadow: 0px -4px 24px 0px #6969691a;
+
+  @media screen and (max-width: 767px) {
+    background-image: url(.././images/footer/mob-bg/footer-mob-bcg-b.jpg),
+      url(.././images/footer/mob-bg/footer-mob-bcg-l.jpg),
+      url(.././images/footer/mob-bg/footer-mob-bcg-r.jpg);
+    background-position: bottom center, top 132px left, top right;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(.././images/footer/mob-bg/footer-mob-bcg-b@2x.jpg),
+        url(.././images/footer/mob-bg/footer-mob-bcg-l@2x.jpg),
+        url(.././images/footer/mob-bg/footer-mob-bcg-r@2x.jpg);
+      background-size: 253px, 110px, 104px;
+      background-position: bottom center, top 132px left, top right;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: url(.././images/footer/tab-bg/footer-tab-bcg-b.jpg),
+      url(.././images/footer/tab-bg/footer-tab-bcg-r.jpg);
+    background-position: bottom, top right;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(.././images/footer/tab-bg/footer-tab-bcg-b@2x.jpg),
+        url(.././images/footer/tab-bg/footer-tab-bcg-r@2x.jpg);
+      background-size: 785px, 203px;
+      background-position: bottom, top right;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(.././images/footer/desk-bg/footer-desk-bcg.jpg);
+    background-size: 1211px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(.././images/footer/desk-bg/footer-desk-bcg@2x.jpg);
+      background-size: 1211px;
+    }
+  }
+}
+
+.footer__container {
+  @extend .container;
+}
+
+.footer__box--first {
+  padding-bottom: 0;
+  display: block;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+  }
+}
+
+.footer__box-wrap {
+  display: flex;
+
+  @media screen and (min-width: 1280px) {
+    align-items: flex-start;
+  }
+}
+
+.footer-nav__list {
+  @extend .list;
+  display: flex;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #000000;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 81px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+    margin-left: 116px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 18px;
+    margin-left: 145px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.footer-nav__link {
+  @extend .link;
+  transition: color $duration $timing-function,
+    text-decoration $duration $timing-function;
+
+  &:hover,
+  &focus {
+    color: $color-accent;
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.footer-sub {
+  @media screen and (min-width: 1280px) {
+    display: inline-block;
+    justify-content: flex-end;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+.footer-sub__title {
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+
+  color: $color-text;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 57px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 0;
+  }
+}
+
+.footer-sub__form {
+  position: relative;
+}
+
+.footer-sub__input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  background: #ffffff;
+  border: 0.85px solid $color-bcg-sec;
+  border-radius: 30px;
+  font-size: 12px;
+  outline: transparent;
+  transition: border-color $duration $timing-function;
+
+  &:hover,
+  &focus {
+    border-color: $color-accent-sec;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+
+    color: $color-text-placeholder;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: inline-flex;
+    width: 279px;
+    margin-right: 13px;
+  }
+}
+
+.footer-sub__validation {
+  position: absolute;
+  top: 46px;
+  opacity: 0;
+}
+
+.footer-sub__input:invalid:required:not(:placeholder-shown)
+  ~ .footer-sub__validation {
+  opacity: 1;
+}
+
+.footer-sub__input:required:valid:not(:placeholder-shown) {
+  border-color: $color-btn-hover;
+}
+
+.footer-sub__input:required:invalid:not(:placeholder-shown) {
+  border-color: $color-text-invalid;
+}
+
+.footer-sub__validation--text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: $color-text-invalid;
+}
+
+.footer-subscription-button {
+  @extend %button;
+  width: 103px;
+  height: 42px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #ffffff;
+  border: 0.85px solid $color-accent-sec;
+
+  transition: background-color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $color-bcg-sec;
+  }
+
+  &:active {
+    background-color: $color-bcg-sec;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: auto;
+  }
+}
+
+.footer-sub__agreement {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: $color-text;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 12px;
+  }
+
+  &--link {
+    color: $color-accent-sec;
+    text-decoration: underline;
+  }
+}
+
+.footer__box--second {
+  display: flex;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 100px;
+    flex-direction: row;
+  }
+}
+
+.footer-docs__list {
+  @extend .list;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: $color-accent-sec;
+  text-decoration: underline;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.footer__copyright {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: $color-text;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+.footer-docs__link {
+  @extend .link;
+}
